@@ -1,0 +1,135 @@
+.add-user-container {
+  width: 80%;
+  margin: 0 auto;
+  max-width: 1400px;
+  margin: 100px auto;
+  padding: 20px;
+  background-color: #fff;
+  box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1);
+  border-radius: 8px;
+}
+
+h1 {
+  font-family: 'Public Sans', sans-serif;
+  font-size: 2rem; /* Changed to rem for better scalability */
+  margin-bottom: 10px;
+}
+
+.subheading {
+  font-family: 'Public Sans', sans-serif;
+  font-size: 1rem; /* Changed to rem for better scalability */
+  color: #666;
+  margin-bottom: 30px;
+}
+
+.add-user-form {
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: 40px;
+}
+
+.form-group {
+  margin-bottom: 20px;
+}
+
+.form-group label {
+  display: block;
+  font-family: 'Public Sans', sans-serif;
+  font-size: 0.875rem; /* Changed to rem for better scalability */
+  margin-bottom: 8px;
+}
+
+.form-group input {
+  width: 100%;
+  padding: 10px;
+  font-size: 0.875rem; /* Changed to rem for better scalability */
+  border-radius: 5px;
+  border: 1px solid #ccc;
+  box-sizing: border-box;
+}
+
+.form-left, .form-right {
+  width: 45%;
+}
+
+.button-group {
+  display: flex;
+  justify-content: flex-end; /* Updated to flex-end for better alignment */
+}
+
+.btn {
+  padding: 12px 24px;
+  font-family: 'Public Sans', sans-serif;
+  font-size: 0.875rem; /* Changed to rem for better scalability */
+  border-radius: 5px;
+  margin: 0 10px;
+  cursor: pointer;
+  border: none;
+}
+
+.btn.cancel {
+  background-color: #d0d0d0;
+  color: #333;
+}
+
+.btn.add-employee {
+  background-color: #164DC3;
+  color: white;
+}
+
+.date-picker {
+  width: 100%;
+  padding: 10px;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  font-size: 1rem;
+}
+
+
+.permission-container-option {
+  width: 100%;
+  height: auto;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  box-sizing: border-box;
+  margin-bottom: 20px;
+  
+}
+
+
+.checkbox-container {
+  display: flex;
+  align-items: center;
+  gap: 8px; /* Adjust the gap between checkbox and label */
+}
+
+.checkbox-container input {
+  margin: 0; /* Remove default margin */
+}
+
+.checkbox-container label {
+  margin: 0; /* Remove default margin */
+  font-family: 'Public Sans', sans-serif;
+  font-size: 0.875rem; /* Changed to rem for better scalability */
+}
+
+@media (max-width: 768px) {
+  .add-user-form {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .form-left, .form-right {
+    width: 100%;
+  }
+
+  .button-group {
+    flex-direction: column;
+    width: 100%;
+  }
+
+  .btn {
+    width: 90%;
+    margin-bottom: 10px;
+  }
+}

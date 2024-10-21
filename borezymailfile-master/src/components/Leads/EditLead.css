@@ -1,0 +1,167 @@
+.create-branch {
+    max-width: 100%;
+    margin: 0 auto;
+    padding: 0px 80px;
+    border-radius: 10px;
+    background-color: transparent;
+  }
+  
+  .create-branch h2 {
+    text-align: left;
+    font-family: 'Public Sans';
+    font-style: normal;
+    font-weight: 600;
+    font-size: 24px;
+    line-height: 28px;
+    color: #000000;
+  }
+  
+  .create-branch form {
+    display: flex;
+    flex-direction: column;
+  }
+  
+  .create-branch label {
+    margin-bottom: 5px;
+    font-family: 'Public Sans';
+    font-style: normal;
+    font-weight: 500;
+    font-size: 13px;
+    line-height: 15px;
+    color: #000000;
+  }
+  
+  .create-branch input[type="text"],
+  .create-branch input[type="email"],
+  .create-branch input[type="date"],
+  .create-branch input[type="number"],
+  .create-branch input[type="password"],
+  .create-branch input[type="datetime-local"],
+  .create-branch select,
+  .create-branch textarea { /* Added textarea */
+    width: 400px;
+    padding: 8px;
+    margin-bottom: 15px;
+    border: 1px solid #000000;
+    border-radius: 10px;
+    box-sizing: border-box;
+    opacity: 0.8;
+  }
+  
+  
+  .create-branch textarea {
+    resize: vertical;
+    min-height: 100px; /* Adjust height as needed */
+  }
+  
+  .create-branch button[type="button"] {
+    background-color: #007bff;
+    color: white;
+    border: none;
+    padding: 5px 10px;
+    border-radius: 5px;
+    cursor: pointer;
+    margin: 0 5px;
+  }
+  
+  .create-branch button[type="submit"] {
+    left: 822px;
+    bottom: 80px;
+    position: absolute;
+    width: 131px;
+    height: 40px;
+    color: #ffffff;
+    background: linear-gradient(187.36deg, #175CFF 5.38%, #0E3799 93.96%);
+    border-radius: 10px;
+    border-color: #ffffff;
+  }
+  
+  .create-branch button[type="submit"]:hover {
+    background-color: linear-gradient(187.36deg, #175CFF 5.38%, #0E3799 93.96%);
+  }
+  
+  .create-branch .error-message {
+    color: red;
+    font-weight: bold;
+    margin-top: 10px;
+  }
+  
+  .create-branch .success-message {
+    color: green;
+    font-weight: bold;
+    margin-top: 10px;
+  }
+  
+  .create-branch .date-fields-container {
+    display: flex;
+    gap: 16px;
+    z-index: 1;
+  }
+  
+  .create-branch .date-fields-container > div {
+    display: flex;
+    flex-direction: column;
+  }
+  
+  .create-branch .field-row,
+  .create-branch .number-of-users-amount-container,
+  .create-branch .amount-container  {
+    display: flex;
+    gap: 8px;
+    /* margin-bottom: 0px; */
+  }
+  
+  .create-branch .field-row div,
+  .create-branch .number-of-users-amount-container,
+  .create-branch .amount-container {
+    display: flex;
+    flex-direction: column;
+    width: 400px;
+  }
+  
+  .create-branch .field-row input {
+    padding: 8px;
+    border: 1px solid #000000;
+    border-radius: 10px;
+    box-sizing: border-box;
+    opacity: 0.8;
+    width: 400px;
+  }
+  /* Custom CSS for react-toastify notifications */
+
+/* Toast container styling */
+.Toastify__toast-container {
+  font-family: Arial, sans-serif;
+  z-index: 9999; /* Ensure toast notifications appear above other elements */
+}
+
+/* Success toast styling */
+.Toastify__toast--success {
+  background-color: #28a745; /* Green background for success messages */
+  color: white; /* White text color */
+}
+
+/* Error toast styling */
+.Toastify__toast--error {
+  background-color: #dc3545; /* Red background for error messages */
+  color: white; /* White text color */
+}
+
+/* General toast styling */
+.Toastify__toast {
+  border-radius: 4px; /* Rounded corners */
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.3); /* Subtle shadow */
+}
+
+/* Toast body styling */
+.Toastify__toast-body {
+  font-size: 14px; /* Font size for toast message */
+  padding: 10px; /* Padding around the toast message */
+}
+
+/* Toast progress bar styling */
+.Toastify__progress-bar {
+  height: 3px; /* Height of the progress bar */
+  background-color: rgba(255, 255, 255, 0.7); /* Semi-transparent white */
+}
+  

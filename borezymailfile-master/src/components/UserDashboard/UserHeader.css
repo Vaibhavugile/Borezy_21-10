@@ -1,0 +1,68 @@
+/* src/components/Header.css */
+
+/* Header container */
+
+.header2 {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  background-color: #f8f9fa;
+  padding: 10px 20px;
+  box-shadow: 0px 0px 4px #A39D9D;
+  position: fixed;
+  width: 100%;
+  top: 0;
+  left: 0;
+  z-index: 1000;
+  transition: left 0.3s ease; /* Smooth transition for sidebar open/close */
+  overflow: auto;
+}
+
+/* Hide header when it should be hidden */
+.header2.hidden {
+  display: none; /* Hide header */
+}
+
+/* Sidebar open adjustment */
+.header2.sidebar-open {
+  left: 0; /* Adjust position when sidebar is open */
+}
+
+.menu-button {
+  background: none;
+  border: none;
+  cursor: pointer;
+}
+
+.header2-logo {
+  flex-grow: 1;
+  display: flex;
+  height: fit-content;
+  justify-content: left; /* Center align the logo */
+  position: relative;
+}
+
+.header2-logo img {
+  height: 30px; /* Set a consistent height for the logo */
+  margin-left: 20px;
+}
+
+.header2-links {
+  /* Style for header links */
+}
+
+.header2-profil {
+  display: flex;
+  align-items: center;
+  margin-left: auto; /* Push the profile icon to the right */
+  padding-right: 30px; /* Add some right padding if needed */
+  overflow: auto; /* Prevent overflow */
+}
+
+.header2-profil img {
+  max-width: 40px; /* Adjust this size as needed */
+  max-height: 40px; /* Adjust this size as needed */
+  border-radius: 50%; /* Make it circular if it's a square image */
+  object-fit: cover; /* Ensures the image scales correctly */
+  cursor: pointer;
+}

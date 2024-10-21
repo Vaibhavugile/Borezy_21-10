@@ -1,0 +1,180 @@
+/* Additional styling for table and other elements */
+.table-container {
+  margin-top: 80px;
+  width: 100%;
+  max-height: 500px; /* Adjust as needed for vertical overflow */
+  overflow-y: auto; /* Enable vertical scrolling */
+  position: relative; /* For positioning the scrollbar wrapper */
+}
+
+/* Create a wrapper for horizontal scroll */
+
+/* Table styling */
+.table {
+  text-align: left;
+  width: 100%; /* Ensure table takes full width of its container */
+  border-collapse: collapse;
+  box-sizing: border-box; /* Include padding and border in width calculations */
+  border-bottom: 1px solid #666666;
+}
+
+/* Table headers and cells styling */
+.table th, .table td {
+  padding: 15px;
+  border-bottom: 1px solid #efefef;
+  font-family: 'Public Sans', sans-serif;
+  font-size: 13px;
+}
+
+.table th {
+  background: #EFEFEF;
+  font-weight: 600;
+  color: #000000;
+}
+
+.table td {
+  background: #FFFFFF;
+  font-weight: 400;
+  color: #000000;
+}
+
+/* New styles for status colors */
+.table td.status-active {
+  color: #008101;
+}
+
+.table td.status-deactive {
+  color: #FF0000;
+}
+
+/* Styles for the Create Branch button */
+
+/* Styles for filter buttons */
+.filter-buttons-container {
+  margin: 20px 0;
+}
+
+.filter-buttons-container span {
+  cursor: pointer;
+  margin-right: 10px;
+}
+
+.active-filter {
+  font-weight: bold;
+}
+
+
+
+
+
+/* Parent container for search bar, action buttons, and create branch button */
+.toolbar-container {
+  display: flex;
+  align-items: center;
+  justify-content: flex-end;
+  gap: 20px;
+  position: absolute;
+  top: 120px;
+  right: 20px;
+}
+
+/* Styles for search bar container */
+.search-bar-container {
+  display: flex;
+  align-items: center;
+  position: relative;
+  height: 33px;
+  background-color: white;
+  border: 1px solid #A39D9D;
+  border-radius: 5px;
+  overflow: hidden;
+  width: 260px;
+}
+
+/* Styles for the search input */
+.search-bar-container input {
+  padding: 10px;
+  width: 100px;
+  border: none;
+  outline: none;
+  font-family: 'Public Sans', sans-serif;
+  font-weight: 400;
+  font-size: 13px;
+  color: #666666;
+  background-color: transparent;
+}
+
+/* Styles for the search dropdown */
+.search-dropdown {
+  padding: 25px;
+  width: 150px;
+  border: none;
+  outline: none;
+  font-family: 'Public Sans', sans-serif;
+  font-weight: 400;
+  font-size: 13px;
+  color: #2d2c2c;
+  background-color: transparent;
+  cursor: pointer;
+  appearance: none;
+  border-left: 1px solid #A39D9D;
+}
+
+/* Align the search icon */
+.search-icon {
+  position: absolute;
+  left:0px;
+  top: 50%;
+  transform: translateY(-50%);
+}
+
+/* Action buttons */
+.action-buttons {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.action-button {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 0 12px;
+  height: 33px;
+  width: 133px;
+  background-color: #164dc3;
+  border: none;
+  border-radius: 5px;
+  font-family: 'Public Sans', sans-serif;
+  font-weight: 500;
+  font-size: 13px;
+  text-align: center;
+  color: #FFFFFF;
+  cursor: pointer;
+}
+
+.action-button:hover {
+  background: linear-gradient(187.36deg, #0E3799 5.38%, #175CFF 93.96%);
+}
+
+/* Create Branch Button */
+.create-branch-container {
+  height: 33px;
+}
+
+.create-branch-container button {
+  height: 33px;
+  background-color: #28a745;
+  border: none;
+  border-radius: 5px;
+  font-family: 'Public Sans', sans-serif;
+  font-weight: 500;
+  font-size: 13px;
+  color: #FFFFFF;
+  cursor: pointer;
+  width: 133px;
+}
+
+.create-branch-container button:hover {
+  background: linear-gradient(187.36deg, #0E3799 5.38%, #175CFF 93.96%);
+}

@@ -1,0 +1,82 @@
+.product-details-sidebar-container {
+  position: fixed;
+top: 62px;
+right: -300px;
+width: 300px;
+height: calc(100% - 62px);
+color: #000000;
+transition: left 0.3s ease;
+padding: 20px;
+z-index: 1; /* Ensure it's above other content */
+background: #FFFFFF;
+box-shadow: 0px 4px 9.2px rgba(0, 0, 0, 0.25);
+border-radius: 0px 20px 20px 0px;
+overflow-y: auto; /* Make sidebar scrollable */
+overflow-x: hidden; /* Prevent horizontal scrolling */
+box-sizing: border-box; /* Include padding in height calculation */
+}
+
+.product-details-sidebar-container.open {
+  right: 0;
+}
+
+.close-button {
+  background: none;
+  border: none;
+  font-size: 24px;
+  cursor: pointer;
+  position: absolute;
+  top: 10px;
+  right: 10px;
+}
+
+.product-details {
+  padding: 20px;
+  overflow-y: auto; /* Allows scrolling if content overflows */
+}
+.product-image-sidebar {
+  width: 200px;
+  height: 200px;
+  margin-bottom: 20px;
+}
+
+.custom-fields {
+  margin-top: 20px;
+}
+
+.custom-fields h3 {
+  font-weight: bold;
+  margin-bottom: 10px;
+}
+.product-image-sidebar {
+  width: 100%;
+  height: auto;
+  display: block;
+  margin: 0 auto;
+}
+
+.image-slider {
+  position: relative;
+  width: 100%;
+  display: flex;
+  align-items: center;
+}
+
+.slider-button {
+  position: absolute;
+  top: 50%;
+  background-color: rgba(0, 0, 0, 0.5);
+  color: white;
+  border: none;
+  padding: 10px;
+  cursor: pointer;
+  z-index: 100;
+}
+
+.slider-button.previous {
+  left: 10px;
+}
+
+.slider-button.next {
+  right: 10px;
+}

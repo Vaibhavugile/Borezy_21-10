@@ -1,0 +1,171 @@
+
+
+.logo-container {
+  position: absolute;
+  top: 20px;
+  left: 20px;
+  text-align: left;
+ 
+}
+
+.logo-image {
+  width: 150px;
+}
+.sign-in-container {
+  display: flex;
+  height: 100vh;
+  font-family: Arial, sans-serif;
+  justify-content: center;
+
+}
+
+.sign-in-left {
+
+  flex: 0.5; /* 60% width */
+  background: url('C:/Users/vaibh/Downloads/bnf-main (1)/bnf-main/borezymailfile-master/src/assets/working_women.png') no-repeat center center;
+  background-size: cover;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+ 
+  color: white;
+  margin: 20px;
+  padding: 20px;
+  border-radius: 10px;
+}
+
+
+.sign-in-left .logo {
+  font-size: 2rem;
+  font-weight: bold;
+  margin-bottom: 2rem;
+}
+
+.sign-in-left h1 {
+  font-size:35px;
+  margin-top: 450px;
+  color: #ffff;
+}
+
+.sign-in-right {
+  flex: 0.5;
+  background: white;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  padding: 50px;
+  
+  
+
+}
+
+.sign-in-right h2 {
+  font-size: 2rem;
+  margin-bottom: 10px;
+}
+
+.sign-in-right h {
+  font-size:20px;
+  margin-bottom: 10px;
+  font-weight: bold;
+}
+.welcome-text{
+  font-size:20px;
+  font-weight:bold;
+  justify-content: center;
+}
+.highlighted-text{
+  color: #755CE0;
+  font-weight: bold;
+}
+
+.sign-in-right h5 {
+  align-self: center;
+  font-size: 1.5rem;
+  margin-bottom: 10px;
+}
+
+
+.sign-in-right p {
+  margin-top: 10px;
+  align-self: center;
+  color: #7f7f7f;
+  margin-bottom: 30px;
+}
+
+.input-group {
+  
+  margin-bottom: 15px;
+  position: relative;
+  width: 100%;
+  border-radius: 20px;
+  
+}
+
+
+
+.remember-me {
+  display: flex;
+  align-items: center;
+  margin-bottom: 15px;
+ 
+}
+
+.remember-me input {
+  margin-right: 10px;
+}
+
+.forgot-password {
+  color: #0066cc;
+  text-decoration: none;
+  margin-bottom: 20px;
+  display:block;
+  
+}
+
+.forgot-password:hover {
+  text-decoration: underline;
+}
+
+.sign-in-button {
+  width: 75%;
+  padding: 10px;
+  background: linear-gradient(187.36deg, #83B2D4 5.38%, #755CE0 93.96%);
+  color: white;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  font-size: 1rem;
+  font-weight: bold;
+}
+
+.sign-in-button:hover {
+  color: #ffffff;
+  background: linear-gradient(187.36deg, #755CE0 5.38%, #83B2D4 93.96%);
+}
+
+
+.input-group .MuiInputLabel-root {
+  transform: translate(14px, 14px) scale(1); /* Adjust the positioning */
+  color: #7f7f7f;
+  
+}
+
+.input-group .MuiInputBase-root {
+  padding-top: 5px; /* Add padding to avoid label overlap */
+}
+
+.input-group .MuiInputLabel-shrink {
+  transform: translate(14px, -6px) scale(0.75); /* Adjust the label when it's focused */
+}
+
+.input-group .MuiInputBase-input {
+  padding: 10px 14px;
+}
+
+
+
+
+

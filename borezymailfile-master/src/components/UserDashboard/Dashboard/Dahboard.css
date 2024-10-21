@@ -1,0 +1,112 @@
+
+
+
+
+
+
+  .dashboard-container {
+    padding: 20px 20px;
+    font-family: 'Arial', sans-serif;
+    margin-top: 20px;
+  }
+
+
+  .reports-container {
+    margin-top: 10px;
+   
+ 
+  }
+  
+  .sales-report, .sales-overview {
+    margin-bottom: 20px;
+    background-color: rgb(255, 255, 255);
+    border-radius: 10px;
+    height: 200px;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+    padding: 25px;
+  }
+
+
+  
+  .report-cards {
+    display: flex;
+    justify-content: space-between;
+    
+  }
+  
+  .card {
+    margin-top: 20px;
+    background-color: #F3EFFC;
+    padding: 30px;
+    margin-left: 20px;
+    margin-right: 20px;
+    border-radius: 5px;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+    text-align: center;
+    width: 18%;
+    height: 80%;
+    font-size: 18px;
+  }
+  
+  .tables-container {
+    margin-top: 20px;
+   
+  }
+  
+  .table1 {
+    margin-bottom: 20px;
+    margin-bottom: 20px;
+    background-color: rgb(255, 255, 255);
+    border-radius: 10px;
+     box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+     padding: 25px;
+  }
+
+  .table2 {
+    margin-bottom: 20px;
+    margin-bottom: 20px;
+    background-color: rgb(255, 255, 255);
+    border-radius: 10px;
+     box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+     padding: 25px;
+  }
+
+  .table3 {
+    margin-bottom: 20px;
+    margin-bottom: 20px;
+    background-color: rgb(255, 255, 255);
+    border-radius: 10px;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+    padding: 25px;
+
+  }
+  
+  .table h4 {
+    margin-bottom: 40px;
+
+  }
+  
+  table {
+    width: 100%;
+    border-collapse: collapse;
+    
+    
+  }
+  
+  th, td {
+    border: 1px solid #ddd;
+    padding: 10px;
+    text-align: center;
+    
+  }
+  
+  th {
+    background-color: #F3EFFC;
+  }
+  
+
+  td {
+    background-color: #ffffff;
+  }
+
+

@@ -1,0 +1,116 @@
+.sidebar {
+  position: fixed;
+  top: 62px;
+  left: -250px; /* Hide sidebar initially */
+  width: 250px;
+  height: calc(100% - 62px); /* Adjust height to fill viewport height minus top position */
+  color: white;
+  transition: left 0.3s ease;
+  padding: 20px;
+  z-index: 1; /* Ensure it's above other content */
+  background: #FFFFFF;
+  box-shadow: 0px 4px 9.2px rgba(0, 0, 0, 0.25);
+  border-radius: 0px 20px 20px 0px;
+  overflow-y: auto; /* Make sidebar scrollable */
+  overflow-x: hidden; /* Prevent horizontal scrolling */
+  box-sizing: border-box; /* Include padding in height calculation */
+}
+
+.sidebar.open {
+  left: 0; /* Show sidebar when open */
+}
+
+.sidebar-close-btn {
+  position: absolute;
+  top: 10px;
+  right: 10px;
+  background: none;
+  border: none;
+  color: white;
+  font-size: 20px;
+  cursor: pointer;
+}
+
+.sidebar ul {
+  list-style: none;
+  padding: 0;
+}
+
+.sidebar ul li {
+  margin: 10px 0;
+}
+
+.sidebar ul li a {
+  font-family: 'Public Sans', sans-serif;
+  font-style:normal;
+  font-weight: 500;
+  
+  font-size: 13px;
+  line-height: 16px;
+  color:#000000;
+  text-align: left;
+  padding-left: 20px;
+}
+
+.sidebar-greeting {
+  font-family: 'Public Sans', sans-serif;
+  font-style: normal;
+  font-weight:bolder;
+  font-size: 16px;
+  line-height: 18px;
+  color: #000000;
+}
+
+.sidebar-link {
+  display: block;
+  padding: 10px;
+  border-radius: 8px;
+  border: 1px solid #D3D3D3;
+  margin: 10px 0;
+  text-align: left;
+  background-color: #F3EFFC;
+  transition: background-color 0.3s ease;
+}
+
+
+
+.sidebar-link:hover {
+  background-color: #e1d6f9; 
+  border-radius: 8px;
+  
+}
+
+.sidebar-link.active {
+  background: #145FCE;
+  border-radius: 10px;
+  
+  
+  
+  
+}
+.sidebar-link.active a {
+  color: white; /* Ensure links inside the active state are white */
+  font-weight: 0;
+}
+ 
+
+
+.sidebar-link a {
+  text-decoration: none;
+  color: inherit;
+}
+
+.sidebar-greeting1 {
+  font-family: 'Public Sans', sans-serif;
+  font-style: normal;
+  font-weight: bolder;
+  font-size: 16px;
+  line-height: 18px;
+  color: #000000;
+}
+.sidebar-link img {
+  width: 20px; /* Adjust icon size */
+  height: 20px;
+  margin-right: 10px; /* Space between icon and text */
+  vertical-align: middle; /* Align icon with text */
+}

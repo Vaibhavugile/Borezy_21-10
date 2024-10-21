@@ -1,0 +1,38 @@
+/* Layout for the entire dashboard */
+.dashboard-layout-user {
+    display: flex;
+    flex-direction: column;
+    height: 100vh;
+  }
+  
+  /* Header styling */
+
+  
+  /* Body container with sidebar and main content */
+  .dashboard-body-user {
+    display: flex;
+    flex-grow: 1;
+  }
+  
+  /* Sidebar styling */
+  
+  
+  /* Main content styling */
+  .dashboard-content-user {
+    flex-grow: 1;
+    padding: 20px;
+    background-color: #fff;
+    overflow-y: auto;
+  }
+  
+  /* Adjust content when sidebar is open */
+  .dashboard-content-user.with-sidebar {
+    margin-left: 250px;
+    
+  }
+  
+  /* Full width content when sidebar is closed */
+  .dashboard-content-user.full-width {
+    margin-left: 0;
+  }
+  

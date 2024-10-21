@@ -1,0 +1,111 @@
+/* Styles for the Lead Form */
+
+/* New Lead Entry */
+.new-lead-title {
+    position: absolute;
+    width: 192px;
+    height: 35px;
+    left: 133px;
+    top: 121px;
+    font-family: 'Be Vietnam', sans-serif;
+    font-weight: 600;
+    font-size: 24px;
+    line-height: 35px;
+    color: #000000;
+}
+
+/* Fill out the form below to add a new lead to your account */
+.form-description {
+    position: absolute;
+    width: 489px;
+    height: 19px;
+    left: 133px;
+    top: 165px;
+    font-family: 'Public Sans', sans-serif;
+    font-weight: 400;
+    font-size: 16px;
+    line-height: 19px;
+    color: #757373;
+}
+
+/* Form Labels */
+.form-label {
+    position: absolute;
+    width: 136px;
+    height: 15px;
+    font-family: 'Public Sans', sans-serif;
+    font-weight: 500;
+    font-size: 13px;
+    line-height: 15px;
+    color: #000000;
+}
+
+/* Form Inputs */
+.form-input {
+    position: absolute;
+    width: 400px;
+    height: 35px;
+    border: 1px solid #000000;
+    border-radius: 10px;
+    box-sizing: border-box;
+    padding: 5px;
+}
+
+/* Specific positions for input fields */
+.input-business-name {
+    top: 244px;
+    left: 133px;
+}
+
+.input-email {
+    top: 326px;
+    left: 133px;
+}
+
+.input-assign-to {
+    top: 362px;
+    left: 133px;
+}
+
+.input-source {
+    top: 436px;
+    left: 133px;
+}
+
+.input-date {
+    top: 500px;
+    left: 133px;
+}
+
+.input-time {
+    top: 500px;
+    left: 339px;
+}
+
+/* Buttons */
+.cancel-button, .submit-button {
+    position: absolute;
+    height: 40px;
+    border-radius: 10px;
+    font-family: 'Be Vietnam', sans-serif;
+    font-weight: 600;
+    font-size: 15px;
+    line-height: 22px;
+    color: #FFFFFF;
+    padding: 0 10px;
+    cursor: pointer;
+}
+
+.cancel-button {
+    width: 84px;
+    left: 648px;
+    top: 673px;
+    background: #797979;
+}
+
+.submit-button {
+    width: 131px;
+    left: 887px;
+    top: 673px;
+    background: #AF7CF6;
+}

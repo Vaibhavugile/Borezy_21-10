@@ -1,0 +1,52 @@
+.edit-user-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+  }
+  
+  .edit-user-form {
+    width: 400px;
+    padding: 20px;
+    border: 1px solid #ccc;
+    border-radius: 8px;
+    background-color: #f9f9f9;
+  }
+  
+  .edit-user-form h2 {
+    text-align: center;
+    margin-bottom: 20px;
+  }
+  
+  .edit-user-form label {
+    display: block;
+    font-weight: 500;
+    margin-bottom: 8px;
+  }
+  
+  .edit-user-form input[type="text"] {
+    width: 100%;
+    padding: 10px;
+    margin-bottom: 15px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+  }
+  
+  .edit-user-form input[type="checkbox"] {
+    margin-bottom: 15px;
+  }
+  
+  .edit-user-form button {
+    width: 100%;
+    padding: 10px;
+    background-color: #4CAF50;
+    color: white;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+  }
+  
+  .edit-user-form button:hover {
+    background-color: #45a049;
+  }
+  

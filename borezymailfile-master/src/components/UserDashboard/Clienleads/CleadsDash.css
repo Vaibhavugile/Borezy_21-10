@@ -1,0 +1,263 @@
+/* Additional styling for table and other elements */
+.dashboard-container{
+    background-color: #ffffff;
+  }
+  .table-container {
+      margin-top: 80px;
+      width: 97%;
+      
+      max-height: 500px; /* Adjust as needed for vertical overflow */
+      overflow-y: auto; /* Enable vertical scrolling */
+      position: relative; /* For positioning the scrollbar wrapper */
+    }
+    .search-bar-container {
+      display: flex;
+      align-items: center;
+    
+    }
+    
+    .search-icon {
+      margin-right: 10px; /* Spacing between icons */
+    }
+    
+    .search-dropdown {
+      position: absolute; /* Position the dropdown relative to the parent */
+      background-color: #ffffff; /* Set background color */
+      border: 1px solid #ddd; /* Add a light border */
+      border-radius: 4px; /* Round the corners */
+      box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.1); /* Add a slight shadow */
+      margin-top: 5px; /* Add space from the trigger */
+      padding: 10px;
+      width: 150px; /* Set a fixed width */
+      z-index: 100; /* Ensure it appears on top */
+      overflow-y: hidden;
+    }
+    
+    .search-dropdown > div {
+      padding: 8px 12px;
+      cursor: pointer;
+  
+    }
+    
+    .search-dropdown > div:hover {
+      background-color: #f2f2f2; /* Highlight the item on hover */
+    }
+    
+    /* Container wrapper to manage relative positioning */
+    
+    
+    input {
+      padding: 8px 12px;
+      width: 250px;
+      border: 1px solid #ddd;
+      border-radius: 4px;
+      outline: none;
+      margin-left: 10px;
+    }
+    
+    /* Create a wrapper for horizontal scroll */
+    
+    /* Table styling */
+    .table {
+      text-align: left;
+      width: 100%; /* Ensure table takes full width of its container */
+      border-collapse: collapse;
+      box-sizing: border-box; /* Include padding and border in width calculations */
+      
+    }
+    
+    /* Table headers and cells styling */
+    .table th, .table td {
+      padding: 15px;
+      border-bottom: 1px solid #F3EFFC;
+      font-family: 'Public Sans', sans-serif;
+      font-size: 13px;
+    }
+    
+    .table th {
+      border: 1px solid #ddd;
+      height: 40px;
+      font-weight: 600;
+      color: #000000;
+      position: sticky;  /* Use sticky positioning */
+      top: 0;            /* Stick to the top */
+      background-color: #F3EFFC; /* Set a background color */
+      z-index: 1;        /* Ensure it stays above the table rows */
+      padding: 10px;     /* Padding for spacing */
+    }
+    
+    .table td {
+      border: 1px solid #ececec;
+      background: #FFFFFF;
+      font-weight: 400;
+      color: #000000;
+    }
+    
+    /* New styles for status colors */
+    .table td.status-active {
+      color: #008101;
+    }
+    
+    .table td.status-deactive {
+      color: #FF0000;
+    }
+    
+    /* Styles for the Create Branch button */
+    
+    /* Styles for filter buttons */
+    .filter-buttons-container {
+      margin: 20px 0;
+    }
+    
+    .filter-buttons-container span {
+      cursor: pointer;
+      margin-right: 10px;
+    }
+    
+    .active-filter {
+      font-weight: bold;
+    }
+    
+    
+    
+    
+    
+    /* Parent container for search bar, action buttons, and create branch button */
+    .toolbar-container {
+      display: flex;
+      align-items: center;
+      justify-content: flex-end;
+      gap: 20px;
+      position: absolute;
+      top: 120px;
+      right: 20px;
+    }
+    
+    /* Styles for search bar container */
+    .search-bar-container {
+      display: flex;
+      align-items: center;
+      position: relative;
+      height: 33px;
+      background-color: white;
+      border: 1px solid #A39D9D;
+      border-radius: 5px;
+      overflow: hidden;
+      width: 260px;
+    }
+    
+    /* Styles for the search input */
+    .search-bar-container input {
+      padding: 10px;
+      width: 100px;
+      border: none;
+      outline: none;
+      font-family: 'Public Sans', sans-serif;
+      font-weight: 400;
+      font-size: 13px;
+      color: #666666;
+      background-color: transparent;
+    }
+    
+    /* Styles for the search dropdown */
+    .search-dropdown {
+      padding: 25px;
+      width: 150px;
+      border: none;
+      outline: none;
+      font-family: 'Public Sans', sans-serif;
+      font-weight: 400;
+      font-size: 13px;
+      color: #2d2c2c;
+      background-color: transparent;
+      cursor: pointer;
+      appearance: none;
+      border-left: 1px solid #A39D9D;
+    }
+    
+    /* Align the search icon */
+    .search-icon {
+      position: absolute;
+      left:0px;
+      top: 50%;
+      transform: translateY(-50%);
+    }
+  
+  
+    
+    
+  
+    .import-button,
+    .export-button{
+      background-color: #164DC3;
+      color: white;
+      border: none;
+      border-radius: 5px;
+      padding: 10px 20px;
+      cursor: pointer;
+      display: flex;
+      align-items: center;
+      margin-right: 10px;
+      
+    }
+  
+    
+    .import-button svg,
+    .export-button svg,
+    .add-product-button svg {
+      margin-right: 5px;
+    }
+    
+    .add-product-button {
+      background-color: #28a745;
+      color: white;
+      border: none;
+      border-radius: 5px;
+      padding: 10px 20px;
+      cursor: pointer;
+      display: flex;
+      align-items: center;
+      margin-right: 10px;
+    }
+    
+    
+    /* Create Branch Button */
+    .create-branch-container {
+      height: 33px;
+    }
+    
+    .create-branch-container button {
+      height: 33px;
+      background-color: #28a745;
+      border: none;
+      border-radius: 5px;
+      font-family: 'Public Sans', sans-serif;
+      font-weight: 500;
+      font-size: 13px;
+      color: #FFFFFF;
+      cursor: pointer;
+      width: 133px;
+    }
+    
+    
+    .product-image {
+      /* Set a maximum height for the image */
+      width: 40px; /* Adjust width automatically */
+      height: 40px; /* Adjust height automatically */
+      object-fit: cover; /* Cover the defined dimensions while maintaining aspect ratio */
+      border-radius: 8px; /* Optional: Add rounded corners */
+    }
+    
+    .dashboard-container.sidebar-open .dashboard-content {
+      margin-left: 250px; /* Adjust this value based on your sidebar width */
+      transition: margin-left 0.3s ease; /* Smooth transition */
+    }
+  
+  
+    
+    .table-container {
+      margin-top: 20px;
+      padding: 0 20px;
+    }
+    
+  
