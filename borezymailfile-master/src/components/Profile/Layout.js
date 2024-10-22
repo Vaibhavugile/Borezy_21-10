@@ -37,7 +37,7 @@ const Layout = () => {
 
             <NavigationItem to={isSuperAdmin ? "/superadmin" : "/usersidebar/users"} label={isSuperAdmin ? "Super Admin" : "Create Users"} />
 
-            <NavigationItem to="/transaction" label="Transaction" />
+            {/* <NavigationItem to="/transaction" label="Transaction" /> */}
 
             {isBranchManager ? (
               <NavigationItem to="/change-password" label="Change Password" /> // Link to Change Password
@@ -45,12 +45,7 @@ const Layout = () => {
               <NavigationItem to="/change-password" label="Change Password" /> // Link to Settings
       
             )}
-            {issubusers ? (
-              <NavigationItem to="/change-password" label="Change Password" /> // Link to Change Password
-            ) : (
-              <NavigationItem to="/change-password" label="Change Password" /> // Link to Settings
-      
-            )}
+            
           </ul>
         </nav>
       </div>

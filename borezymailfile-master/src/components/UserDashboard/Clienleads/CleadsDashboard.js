@@ -123,12 +123,12 @@ const ClientLeadsDashboard = () => {
         <h2 style={{ marginLeft: '20px', marginTop: '100px' }} >Total Leads</h2>
         <p style={{ marginLeft: '20px' }}>{totalLeads} Leads</p>
         <div className="toolbar-container">
-          <div className="search-bar-container">
+          <div className="search-bar-container7">
             
             <select
               value={searchField}
               onChange={(e) => setSearchField(e.target.value)}
-              className="search-dropdown"
+              className="search-dropdown7"
               
             >
               <option value="leadName">Lead Name</option>

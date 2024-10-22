@@ -1,0 +1,117 @@
+/* Centering the main headings */
+.sales-report-container h2 {
+  text-align: center;
+  margin-bottom: 20px;
+  color: 333;
+}
+
+/* Centering the main headings */
+h3 {
+  text-align: center; /* Center align main headings like Daily Sales Report */
+  margin-bottom: 20px; /* Adds space below the heading */
+  color: #333;
+}
+
+.filters-container {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 20px;
+}
+
+.date-filters {
+  display: flex;
+  gap: 10px;
+}
+
+.search-and-export {
+  display: flex;
+  gap: 10px;
+  align-items: center; /* Center align items vertically */
+}
+
+.search-and-export input {
+  padding: 5px;
+}
+
+.search-and-export button {
+  padding: 10px 10px;
+  background-color: #007bff;
+  color: white;
+  border: none;
+  cursor: pointer;
+}
+
+.search-and-export button:hover {
+  background-color: #007bff;
+}
+
+.sales-report-container {
+  padding: 20px;
+}
+
+.sales-table {
+  width: 100%;
+  border-collapse: collapse;
+  margin-bottom: 20px;
+}
+
+.sales-table th,
+.sales-table td {
+  border: 1px solid #ddd;
+  padding: 8px;
+  text-align: center; /* Center align table headings and cells */
+}
+
+.sales-table th {
+  background-color: #f2f2f2;
+}
+
+.sales-table tr:hover {
+  background-color: #f1f1f1;
+}
+
+.pagination {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-top: 20px;
+}
+
+.pagination button {
+  padding: 5px 10px;
+  background-color: #007bff;
+  color: white;
+  border: none;
+  cursor: pointer;
+}
+
+.pagination button:hover {
+  background-color: #007bff;
+}
+
+.pagination button:disabled {
+  background-color: #ccc;
+  cursor: not-allowed;
+}
+
+.back-button {
+  padding: 5px 10px;
+  margin-bottom: 20px;
+  background-color: #007bff;
+  color: white;
+  border: none;
+  cursor: pointer;
+}
+
+.back-button:hover {
+  background-color: #007bff;
+}
+
+/* Horizontal line style */
+.table-divider {
+  border: none; /* Remove default border */
+  height: 3px; /* Set height */
+  background-color: #ddd; /* Line color */
+  margin: 70px 0; /* Spacing */
+}

@@ -240,7 +240,7 @@ const ProductDashboard = () => {
             </select>
             <input
               type="text"
-              placeholder={`Search by ${searchField.replace(/([A-Z])/g, ' $1')}`}
+              placeholder={`Search by..`}
               value={searchQuery}
               onChange={(e) => setSearchQuery(e.target.value)}
             />

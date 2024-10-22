@@ -1,8 +1,13 @@
+
 import React, { useEffect, useState } from 'react';
 import { collection, getDocs, query, where, orderBy } from 'firebase/firestore';
 import { db } from '../../../firebaseConfig';  // Import the Firebase config file
 import './Dahboard.css';
 import { useUser } from '../../Auth/UserContext';
+import UserHeader from '../../UserDashboard/UserHeader';
+import UserSidebar from '../../UserDashboard/UserSidebar';
+
+
 
 const Dashboard = () => {
   const [topUsers, setTopUsers] = useState([]);
@@ -144,10 +149,20 @@ const Dashboard = () => {
     fetchAllBookingsWithUserDetails();
   }, [userData.branchCode]);
 
+  const [sidebarOpen, setSidebarOpen] = useState(false);
+  const handleSidebarToggle = () => {
+    setSidebarOpen(!sidebarOpen);
+  };
+
   return (
-    <div className="dashboard-container">
-      <div className="reports-container">
-        
+      <div className={`dashboard-container ${sidebarOpen ? 'sidebar-open' : ''}`}>
+      <UserSidebar isOpen={sidebarOpen} onToggle={handleSidebarToggle} />
+        <div className="reports-container">
+          <UserHeader onMenuClick={handleSidebarToggle} isSidebarOpen={sidebarOpen} />
+          <h2 style={{  marginTop: '30px' }}>
+            Dashboard
+          </h2>
+
         <div className="sales-report">
           <h4>Daily Sales Report</h4>
           <div className="report-cards">
@@ -162,11 +177,11 @@ const Dashboard = () => {
         <div className="sales-overview">
           <h4>Sales Overview (Monthly)</h4>
           <div className="report-cards">
-            <div className="card">Total Bookings <br /> 12,050</div>
+            <div className="card">Total Bookings </div>
             <div className="card">Monthly Pick-up Pending <br /> {monthlyPickupPending}</div>
             <div className="card">Monthly Return Pending <br /> {monthlyReturnPending}</div>
-            <div className="card">Refund Pending <br /> 14</div>
-            <div className="card">Successful <br /> 12,017</div>
+            <div className="card">Refund Pending </div>
+            <div className="card">Successful </div>
           </div>
         </div>
         

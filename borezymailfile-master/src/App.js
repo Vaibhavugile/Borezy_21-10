@@ -40,6 +40,7 @@ import SingleComponent from './components/Profile/Profile';
 import Overview from './components/Profile/overview';
 import EditCLead from './components/UserDashboard/Clienleads/Editlead';
 import ForgotPassword from './components/Auth/ForgotPassword';
+import ProductReport from './components/UserDashboard/productreport';
 const App = () => (
   <UserProvider>
   <Router>
@@ -81,6 +82,7 @@ const App = () => (
       <Route path="/usersidebar/dashboard" element={<Dashboard/>}/>
       <Route path='/editclientlead/:id' element={<EditCLead/>}/>
       <Route path="/forgot-password" element={<ForgotPassword/>}/>
+      <Route path ="/report" element={<ProductReport/>}/>
 
       
      

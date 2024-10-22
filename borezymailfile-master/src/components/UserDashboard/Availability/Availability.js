@@ -7,7 +7,9 @@ import UserSidebar from '../../UserDashboard/UserSidebar';
 import { useUser } from '../../Auth/UserContext';
 import search from '../../../assets/Search.png';
 import { FaSearch, FaDownload, FaUpload, FaPlus, FaEdit, FaTrash, FaCopy } from 'react-icons/fa';
+import Papa from 'papaparse';
 import './Availability.css'; // Create CSS for styling
+
 
 const BookingDashboard = () => {
   const [bookings, setBookings] = useState([]);
@@ -16,6 +18,8 @@ const BookingDashboard = () => {
   const [sidebarOpen, setSidebarOpen] = useState(false);
   const [searchQuery, setSearchQuery] = useState('');
   const [selectedBooking, setSelectedBooking] = useState(null);
+
+  const [filteredBookings, setFilteredBookings] = useState(bookings);
  
   
   const [searchField, setSearchField] = useState('');
@@ -42,6 +46,7 @@ const BookingDashboard = () => {
           where('branchCode', '==', userData.branchCode)
         );
         const productsSnapshot = await getDocs(q);
+        
         let allBookings = [];
   
         for (const productDoc of productsSnapshot.docs) {
@@ -59,12 +64,7 @@ const BookingDashboard = () => {
               returnDate, 
               quantity, 
               userDetails, 
-              price, 
-              deposit, 
-              priceType, 
-              minimumRentalPeriod, 
-              discountedGrandTotal, 
-              extraRent 
+              
             } = bookingData;
   
             allBookings.push({
@@ -76,12 +76,9 @@ const BookingDashboard = () => {
               pickupDate: pickupDate.toDate(),
               returnDate: returnDate.toDate(),
               
-              priceType,
-              minimumRentalPeriod,
-              discountedGrandTotal,
-              extraRent,
+              
               stage: userDetails.stage,
-              products: [{ productCode, quantity: parseInt(quantity, 10),price,deposit, },], // Store product codes with quantities
+              products: [{ productCode, quantity: parseInt(quantity, 10) },], // Store product codes with quantities
             });
           });
         }
@@ -129,29 +126,61 @@ const BookingDashboard = () => {
   
 
 
+  
+  
   const handleSearch = () => {
-    const lowerCaseQuery = searchQuery.toLowerCase();
+    const lowerCaseQuery = searchQuery.toLowerCase(); // Make search case-insensitive
   
     if (lowerCaseQuery === '') {
-      setBookings(bookings); // Show all bookings if search query is empty
+      setFilteredBookings(bookings); // Show all bookings if search query is empty
     } else {
-      const filteredBookings = bookings.filter(booking => {
-        // For date comparison, we convert to a readable format
-        const formattedPickupDate = booking.pickupDate.toLocaleDateString().toLowerCase();
-        const formattedReturnDate = booking.returnDate.toLocaleDateString().toLowerCase();
-  
-        return (
-          booking[searchField]?.toString().toLowerCase().includes(lowerCaseQuery) ||
-          formattedPickupDate.includes(lowerCaseQuery) ||
-          formattedReturnDate.includes(lowerCaseQuery)
-        );
+      const filteredBookings = bookings.filter((booking) => {
+        // Apply filtering based on the selected search field
+        if (searchField === 'bookingId') {
+          return booking.bookingId && String(booking.bookingId).toLowerCase().includes(lowerCaseQuery);
+        } else if (searchField === 'receiptNumber') {
+          return booking.receiptNumber && String(booking.receiptNumber).toLowerCase().includes(lowerCaseQuery);
+        } else if (searchField === 'username') {
+          return booking.username && booking.username.toLowerCase().includes(lowerCaseQuery);}
+          else if (searchField === 'emailId') {
+            return booking.email && booking.email.toLowerCase().includes(lowerCaseQuery);
+        } else if (searchField === 'contactNo') {
+          return booking.contactNo && String(booking.contactNo).toLowerCase().includes(lowerCaseQuery);
+        } else if (searchField === 'pickupDate') {
+          return (booking.pickupDate && new Date(booking.pickupDate).toLocaleDateString().toLowerCase().includes(lowerCaseQuery)) ;
+        } else if (searchField === 'returnDate') {
+          return booking.returnDate && new Date(booking.returnDate).toLocaleDateString().toLowerCase().includes(lowerCaseQuery);
+        } else if (searchField === 'productCode') {
+          return booking.products && booking.products.some(product =>
+            String(product.productCode).toLowerCase().includes(lowerCaseQuery)
+          );
+        } else {
+          // If no specific search field is selected, perform search across all fields
+          return (
+            (booking.bookingId && String(booking.bookingId).toLowerCase().includes(lowerCaseQuery)) ||
+            (booking.receiptNumber && String(booking.receiptNumber).toLowerCase().includes(lowerCaseQuery)) ||
+            (booking.username && booking.username.toLowerCase().includes(lowerCaseQuery)) ||
+            (booking.contactNo && String(booking.contactNo).toLowerCase().includes(lowerCaseQuery)) ||
+            (booking.email && booking.email.toLowerCase().includes(lowerCaseQuery)) ||
+            (booking.pickupDate && new Date(booking.pickupDate).toLocaleDateString().toLowerCase().includes(lowerCaseQuery)) ||
+            (booking.returnDate && new Date(booking.returnDate).toLocaleDateString().toLowerCase().includes(lowerCaseQuery)) ||
+            (booking.price && String(booking.price).toLowerCase().includes(lowerCaseQuery)) ||
+            (booking.deposit && String(booking.deposit).toLowerCase().includes(lowerCaseQuery)) ||
+            (booking.minimumRentalPeriod && String(booking.minimumRentalPeriod).toLowerCase().includes(lowerCaseQuery)) ||
+            (booking.discountedGrandTotal && String(booking.discountedGrandTotal).toLowerCase().includes(lowerCaseQuery)) ||
+            (booking.stage && booking.stage.toLowerCase().includes(lowerCaseQuery)) ||
+            (booking.products && booking.products.some(product =>
+              String(product.productCode).toLowerCase().includes(lowerCaseQuery) ||
+              String(product.quantity).toLowerCase().includes(lowerCaseQuery)
+            ))
+          );
+        }
       });
-      
-      setBookings(filteredBookings);
+  
+      setFilteredBookings(filteredBookings); // Update bookings with filtered results
     }
   };
   
-
   useEffect(() => {
     handleSearch();
   }, [searchQuery, searchField]);
@@ -209,9 +238,7 @@ const BookingDashboard = () => {
   };
 
   // Search function to filter bookings
-  const filteredBookings = bookings.filter((booking) =>
-    String(booking.bookingId).toLowerCase().includes(searchQuery.toLowerCase())
-  );
+  
   
   // Add a filter based on the stageFilter
   const finalFilteredBookings = filteredBookings.filter((booking) => {
@@ -239,7 +266,7 @@ const BookingDashboard = () => {
       const products = bookingToUpdate.products; // Get all products
   
       // Log values to check their types and the document path
-      console.log('Booking ID:', receiptNumber, 'Type:', typeof receiptNumber);
+      console.log('Receipt Number:', receiptNumber, 'Type:', typeof receiptNumber);
   
       // Loop through all products
       for (const product of products) {
@@ -292,7 +319,7 @@ const BookingDashboard = () => {
       <UserSidebar isOpen={sidebarOpen} onToggle={() => setSidebarOpen(!sidebarOpen)} />
       <div className="dashboard-content">
         <UserHeader onMenuClick={() => setSidebarOpen(!sidebarOpen)} />
-        <h2 style={{ marginLeft: '10px', marginTop: '100px' }}>
+        <h2 style={{ marginLeft: '10px', marginTop: '120px' }}>
           Total Bookings
         </h2>
         <div className="filter-container">
@@ -313,11 +340,14 @@ const BookingDashboard = () => {
               onChange={(e) => setSearchField(e.target.value)}
               className="search-dropdown7"
             >
-             <option value="bookingId">Booking ID</option>
+             
                 <option value="receiptNumber">Receipt Number</option>
-                <option value="productCode">Product Code</option>
                 <option value="username">Clients Name</option>
                 <option value="contactNo">Contact Number</option>
+                <option value="emailId">Email Id</option>
+                <option value="productCode">Product Code</option>
+                
+                
                 <option value="pickupDate">Pickup Date</option>
                 <option value="returnDate">Return Date</option>
             </select>
@@ -330,11 +360,11 @@ const BookingDashboard = () => {
             />
             {/* <button onClick={handleSearch} className="search-button">Search</button> */}
           </div>
-          <div className="toolbar-actions">
+          
             <div className='action-buttons'>
-            <button className="export-button" onClick={exportToCSV}>
+            <label className="export-button" onClick={exportToCSV}>
               <FaDownload /> Export
-            </button>
+            </label>
             <label htmlFor="import" className="import-button">
               <FaUpload /> Import
               <input
@@ -345,11 +375,11 @@ const BookingDashboard = () => {
                 style={{ display: 'none' }}
               />
             </label>
-            <button className="add-product-button" onClick={handleAddBooking}>
+            <label className="add-product-button" onClick={handleAddBooking}>
               <FaPlus /> Add Booking
-            </button>
+            </label>
             </div>
-          </div>
+          
         </div>
 
         {loading ? (

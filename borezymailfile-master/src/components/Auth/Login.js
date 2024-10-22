@@ -139,7 +139,7 @@ const Login = () => {
           branchName: branchData.branchName,
           numberOfUsers: branchData.numberOfUsers,
         });
-        navigate('/welcome');
+        navigate('/usersidebar/dashboard');
         return;
       }
 
@@ -207,7 +207,7 @@ const Login = () => {
             email,
             branchCode: subuserData.branchCode,
           });
-          navigate('/welcome');
+          navigate('/usersidebar/dashboard');
           return;
         } else {
           setError('Associated branch not found. Contact your branch owner.');

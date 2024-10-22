@@ -178,12 +178,12 @@ const UserDashboard = () => {
           {totalUsers} Users Left
         </p>
         <div className="toolbar-container">
-          <div className="search-bar-container">
-            <img src={search} alt="search icon" className="search-icon" />
+          <div className="search-bar-container7">
+            <img src={search} alt="search icon" className="search-icon7" />
             <select
               value={searchField}
               onChange={(e) => setSearchField(e.target.value)}
-              className="search-dropdown"
+              className="search-dropdown7"
             >
               <option value="name">Name</option>
               <option value="email">Email</option>
@@ -193,7 +193,7 @@ const UserDashboard = () => {
             </select>
             <input
               type="text"
-              placeholder={`Search by ${searchField.replace(/([A-Z])/g, ' $1')}`}
+              placeholder={`Search by..`}
               value={searchQuery}
               onChange={(e) => setSearchQuery(e.target.value)}
             />

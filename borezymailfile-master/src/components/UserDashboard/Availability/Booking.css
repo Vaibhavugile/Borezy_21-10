@@ -73,7 +73,7 @@
     padding: 10px 20px; /* Padding for the button */
     cursor: pointer; /* Pointer cursor on hover */
     font-size: 16px; /* Font size */
-    margin-top: 100px;
+    margin-top: 30px;
     width: 1200px;
     margin-left: 250px; /* Space above the button */
 }
@@ -265,7 +265,8 @@
      
     padding: 10px;
      border: 1px solid #ddd;
-     background:#ffffff
+     background:#ffffff;
+     width: 150%;
 
   }
 
@@ -392,7 +393,8 @@
 
 .product-check{
   height: fit-content;
-  width: auto;
+  width:150%
+  ;
 }
 .receipt-container span{
   color: #000000;

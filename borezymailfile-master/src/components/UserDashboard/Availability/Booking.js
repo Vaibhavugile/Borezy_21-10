@@ -1033,7 +1033,7 @@ useEffect(() => {
          <h9>Customer Details</h9>
         
          <div className="date-row" style={{  width: '700px',display:'flex',marginTop: '80px', }}>
-           <div className="form-group1" style={{ flex: '0 0 45%', marginRight: '0px' }} >
+           <div className="form-group1" style={{ flex: '0 0 45%', marginRight: '0px', }} >
            <label>Name</label>
            <input
              type="text"
@@ -1081,6 +1081,7 @@ useEffect(() => {
            onChange={(e) => setUserDetails({ ...userDetails, identityproof: e.target.value })}
            required
          >
+           <option value="" disabled>Select Identity Proof </option>
            <option value="aadharcard" >Aadhaar Card</option>
            <option value="pancard">Pan Card</option>
            <option value="drivinglicence">Driving Licence</option>
@@ -1104,6 +1105,7 @@ useEffect(() => {
            onChange={(e) => setUserDetails({ ...userDetails, source: e.target.value })}
            required
          >
+          <option value="" disabled>Select The Source</option>
            <option value="google" >Google</option>
            <option value="instagram" >Instagram</option>
            <option value="facebook" >Facebook</option>
