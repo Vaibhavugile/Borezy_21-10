@@ -45,7 +45,7 @@ const BookingDashboard = () => {
           collection(db, 'products'),
           where('branchCode', '==', userData.branchCode)
         );
-        const productsSnapshot = await getDocs(q);
+        const productsSnapshot = await getDocs(q) ;
         
         let allBookings = [];
   
@@ -54,6 +54,7 @@ const BookingDashboard = () => {
           const bookingsRef = collection(productDoc.ref, 'bookings');
           const bookingsQuery = query(bookingsRef, orderBy('pickupDate', 'asc'));
           const bookingsSnapshot = await getDocs(bookingsQuery);
+          
   
           bookingsSnapshot.forEach((doc) => {
             const bookingData = doc.data();
@@ -64,6 +65,8 @@ const BookingDashboard = () => {
               returnDate, 
               quantity, 
               userDetails, 
+              createdAt,
+              
               
             } = bookingData;
   
@@ -74,7 +77,8 @@ const BookingDashboard = () => {
               contactNo: userDetails.contact,
               email: userDetails.email,
               pickupDate: pickupDate.toDate(),
-              returnDate: returnDate.toDate(),
+              returnDate: returnDate.toDate() ,
+              createdAt:createdAt || null,
               
               
               stage: userDetails.stage,
@@ -140,6 +144,8 @@ const BookingDashboard = () => {
           return booking.bookingId && String(booking.bookingId).toLowerCase().includes(lowerCaseQuery);
         } else if (searchField === 'receiptNumber') {
           return booking.receiptNumber && String(booking.receiptNumber).toLowerCase().includes(lowerCaseQuery);
+        } else if (searchField === 'bookingcreation') {
+          return (booking.createdAt && (booking.createdAt).toDate().toLocaleDateString().toLowerCase().includes(lowerCaseQuery)) ;
         } else if (searchField === 'username') {
           return booking.username && booking.username.toLowerCase().includes(lowerCaseQuery);}
           else if (searchField === 'emailId') {
@@ -159,6 +165,7 @@ const BookingDashboard = () => {
           return (
             (booking.bookingId && String(booking.bookingId).toLowerCase().includes(lowerCaseQuery)) ||
             (booking.receiptNumber && String(booking.receiptNumber).toLowerCase().includes(lowerCaseQuery)) ||
+            (booking.createdAt && (booking.createdAt).toDate().toLocaleDateString().toLowerCase().includes(lowerCaseQuery))||
             (booking.username && booking.username.toLowerCase().includes(lowerCaseQuery)) ||
             (booking.contactNo && String(booking.contactNo).toLowerCase().includes(lowerCaseQuery)) ||
             (booking.email && booking.email.toLowerCase().includes(lowerCaseQuery)) ||
@@ -342,6 +349,7 @@ const BookingDashboard = () => {
             >
              
                 <option value="receiptNumber">Receipt Number</option>
+                <option value ="bookingcreation">Bokking Creation</option>
                 <option value="username">Clients Name</option>
                 <option value="contactNo">Contact Number</option>
                 <option value="emailId">Email Id</option>
@@ -391,7 +399,7 @@ const BookingDashboard = () => {
                 <thead>
                   <tr>
                     <th>Receipt Number</th>
-                    
+                    <th>Booking Creation Date</th>
                     <th>Clients Name</th>
                     <th>Contact Number</th>
                     <th>Email id </th>
@@ -409,7 +417,11 @@ const BookingDashboard = () => {
                     <tr key={`${booking.receiptNumber}`} onClick={() => handleBookingClick(booking)}>
 
                       <td>{booking.receiptNumber}</td>
-                      
+                      <td>
+                          {booking.createdAt ? booking.createdAt.toDate().toLocaleString() : 'N/A'}
+                      </td>
+
+
                       <td>{booking.username}</td>
                       <td>{booking.contactNo}</td>
                       <td>{booking.email}</td>

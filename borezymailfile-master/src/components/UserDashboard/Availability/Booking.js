@@ -725,6 +725,7 @@ const handleDiscountChange = (e) => {
   
       const newBookingId = await getNextBookingId(pickupDateObj, product.productCode);
       // Ensure receipt.products is an array
+      const createdAt = new Date(); 
       await addDoc(collection(productRef, 'bookings'), {
         bookingId: newBookingId,
         receiptNumber,
@@ -741,7 +742,8 @@ const handleDiscountChange = (e) => {
         extraRent,
         
          // Save deposit
-        totalCost: totalCost.totalPrice, // Save total price
+        totalCost: totalCost.totalPrice,
+        createdAt, // Save total price
       });
     }
    
