@@ -41,6 +41,7 @@ import Overview from './components/Profile/overview';
 import EditCLead from './components/UserDashboard/Clienleads/Editlead';
 import ForgotPassword from './components/Auth/ForgotPassword';
 import ProductReport from './components/UserDashboard/productreport';
+import BookingDetailsPage from './components/UserDashboard/Availability/BookingDetailsPage';
 const App = () => (
   <UserProvider>
   <Router>
@@ -83,6 +84,7 @@ const App = () => (
       <Route path='/editclientlead/:id' element={<EditCLead/>}/>
       <Route path="/forgot-password" element={<ForgotPassword/>}/>
       <Route path ="/report" element={<ProductReport/>}/>
+      <Route path ="/booking-details/:receiptNumber" element={<BookingDetailsPage/>}/>
 
       
      

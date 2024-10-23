@@ -32,7 +32,7 @@ const BookingDashboard = () => {
 
   const handleBookingClick = (booking) => {
     setSelectedReceiptNumber(booking.receiptNumber); // Set the selected receipt number
-  
+    navigate(`/booking-details/${booking.receiptNumber}`, { state: { booking } });
   };
 
   
@@ -192,6 +192,11 @@ const BookingDashboard = () => {
     handleSearch();
   }, [searchQuery, searchField]);
 
+  useEffect(() => {
+    setFilteredBookings(bookings);
+  }, [bookings]);
+  
+
   const exportToCSV = () => {
     const csv = Papa.unparse(bookings);
     const blob = new Blob([csv], { type: 'text/csv;charset=utf-8;' });
@@ -349,7 +354,7 @@ const BookingDashboard = () => {
             >
              
                 <option value="receiptNumber">Receipt Number</option>
-                <option value ="bookingcreation">Bokking Creation</option>
+                <option value ="bookingcreation">Booking Creation</option>
                 <option value="username">Clients Name</option>
                 <option value="contactNo">Contact Number</option>
                 <option value="emailId">Email Id</option>

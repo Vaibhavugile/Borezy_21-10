@@ -1,0 +1,187 @@
+.booking-details-container {
+  background-color: #ffffff;
+  border-radius: 10px;
+  box-shadow: 0 4px 16px rgba(0, 0, 0, 0.1);
+  margin: 30px auto;
+  padding: 40px;
+  max-width: 1000px; /* Reduced width for smaller size */
+  font-family: 'Arial', sans-serif;
+  color: #333;
+  position: left; /* Retaining relative position for activity log */
+  transition: box-shadow 0.3s ease;
+  text-align: center; /* Center the text inside */
+}
+
+.booking-details-container:hover {
+  box-shadow: 0 6px 20px rgba(0, 0, 0, 0.15);
+}
+
+.booking-details-container h2,
+.booking-details-container h3 {
+  color: #444;
+  font-weight: 700;
+  margin-bottom: 25px;
+}
+
+.booking-details-container h2 {
+  font-size: 1.17rem;
+  margin-bottom: 40px;
+  border-bottom: 2px solid #f0f0f0;
+  padding-bottom: 15px;
+  text-transform: capitalize;
+}
+
+.info-row {
+  display: flex;
+  justify-content: center; /* Centering the content horizontally */
+  margin-bottom: 20px;
+  border-bottom: 1px solid #e0e0e0;
+  padding-bottom: 15px;
+}
+
+.info-row p {
+  flex: 1;
+  margin: 0;
+  font-size: 1rem;
+  line-height: 1.5;
+  text-align: center;
+}
+
+strong {
+  color: #555;
+  font-weight: 600;
+}
+
+.personal-info,
+.product-details-container,
+.payment-info,
+.client-type-container {
+  margin-bottom: 40px;
+  padding: 20px;
+  border: 1px solid #e0e0e0;
+  border-radius: 6px;
+  background-color: #fafafa;
+  text-align: center;
+}
+
+.product-details-table {
+  width: 100%;
+  border-collapse: collapse;
+}
+
+.product-details-table th,
+.product-details-table td {
+  padding: 12px;
+  text-align: center; /* Center table content */
+  border-bottom: 1px solid #e0e0e0;
+}
+
+.product-details-table th {
+  background-color: #f9f9f9;
+  color: #333;
+}
+
+.product-details-table tr:hover {
+  background-color: #f1f1f1;
+}
+
+.client-type-container h5 {
+  font-size: 1.5rem;
+  margin-bottom: 15px;
+  color: #444;
+  font-weight: 700;
+}
+
+label {
+  font-weight: 500;
+}
+
+select {
+  padding: 12px;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  font-size: 1rem;
+  color: #333;
+  background-color: #fff;
+  width: 400px; /* Reduced width for the select box */
+  transition: border-color 0.3s ease;
+  text-align: left;
+}
+
+select:focus {
+  border-color: #007bff;
+  outline: none;
+}
+
+button {
+  padding: 10px 20px;
+  background-color: #007bff;
+  color: white;
+  border: none;
+  border-radius: 4px;
+  font-size: 1.17rem;
+  cursor: pointer;
+  transition: background-color 0.3s ease, transform 0.3s ease;
+}
+
+button:hover {
+  background-color: #0056b3;
+  transform: translateY(-2px);
+}
+
+button:focus {
+  outline: none;
+  background-color: #004080;
+}
+
+/* Activity Log Section - Fixed to the top right, separate from the main content */
+.activity-log-container {
+  position: fixed; /* Make the activity log fixed on the screen */
+  top: 40px; /* Position it from the top */
+  right: 15px; /* Position it from the right */
+  width: 340px; /* Adjust width */
+  background-color: #f5f5f5;
+  padding: 20px;
+  border: 1px solid #e0e0e0;
+  border-radius: 6px;
+  box-shadow: 0 4px 16px rgba(0, 0, 0, 0.1);
+  z-index: 1000; /* Ensure it appears above other content */
+}
+
+.activity-log-container h3 {
+  font-size: 1.2rem;
+  color: #444;
+  margin-bottom: 15px;
+}
+
+.activity-log-container ul {
+  list-style-type: none;
+  padding-left: 0;
+}
+
+.activity-log-container ul li {
+  background-color: #fff;
+  padding: 10px;
+  margin-bottom: 10px;
+  border-radius: 4px;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+.activity-log-container ul li:hover {
+  background-color: #f1f1f1;
+}
+
+.activity-log-container ul li p {
+  margin: 0;
+  font-size: 0.9rem;
+  color: #555;
+}
+
+/* Adjustments for responsiveness */
+@media (max-width: 768px) {
+  .activity-log-container {
+    position: static; /* Revert to default positioning for small screens */
+    margin-top: 20px;
+    width: 100%; /* Full width on smaller screens */
+  }
+}

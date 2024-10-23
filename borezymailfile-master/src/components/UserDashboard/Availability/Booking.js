@@ -2,7 +2,7 @@ import React, { useState,useEffect } from 'react';
 import { db } from '../../../firebaseConfig';
 import { collection, doc, addDoc, getDoc, query, getDocs, orderBy, writeBatch, where,setDoc } from 'firebase/firestore';
 import { getStorage, ref, getDownloadURL,listAll } from "firebase/storage"; 
-import { useNavigate } from 'react-router-dom';
+import { Await, useNavigate } from 'react-router-dom';
 import UserHeader from '../../UserDashboard/UserHeader';
 import UserSidebar from '../../UserDashboard/UserSidebar';
 import { useUser } from '../../Auth/UserContext';
@@ -139,23 +139,27 @@ const handleDiscountChange = (e) => {
       console.error('Error fetching product details:', error);
     }
   };
-  const generateReceiptNumber = async () => {
-    const receiptCounterRef = doc(db, 'counters', 'receiptNumber'); // Store the receipt number counter in Firestore
+  const generateReceiptNumber = async (branchCode) => {
+    // Define the path where the receipt number counter is stored for a specific branch
+    const receiptCounterRef = doc(db, 'branchCounters', branchCode); // Store each branch's receipt counter in a 'branchCounters' collection
+    
+    // Fetch the current receipt number counter for the branch
     const receiptCounterDoc = await getDoc(receiptCounterRef);
   
     let receiptNumber = 1; // Default to 1 if no counter exists
   
     if (receiptCounterDoc.exists()) {
       const data = receiptCounterDoc.data();
-      receiptNumber = data.currentValue + 1; // Increment the counter
+      receiptNumber = data.currentValue + 1; // Increment the counter for the branch
     }
   
-    // Update the counter in Firestore
+    // Update the counter in Firestore for the branch
     await setDoc(receiptCounterRef, { currentValue: receiptNumber });
   
-    // Format the receipt number (e.g., add leading zeros)
-    return `REC-${String(receiptNumber).padStart(6, '0')}`; // REC-000001
+    // Format the receipt number (e.g., add leading zeros and branch code)
+    return `${branchCode}-REC-${String(receiptNumber).padStart(6, '0')}`; // e.g., BR001-REC-000001
   };
+  
 
   function getCurrentDate() {
     const today = new Date();
@@ -461,8 +465,7 @@ const handleDiscountChange = (e) => {
     e.preventDefault();
     
     try {
-      const receiptNumber = await generateReceiptNumber();
-      setReceiptNumber(receiptNumber); 
+      
       let bookingDetails = [];
   
       for (const product of products) {
@@ -593,11 +596,13 @@ const handleDiscountChange = (e) => {
   
   
 
+  
 
   const handleConfirmPayment = async () => {
     try {
-      const receiptNumber = await generateReceiptNumber();
-      setReceiptNumber(receiptNumber); 
+     const receiptNumber =  
+    await generateReceiptNumber(userData.branchCode);
+   setReceiptNumber(receiptNumber); 
       const allQuantitiesAvailable = await Promise.all(
         products.map(async (product) => {
           const productRef = doc(db, 'products', product.productCode);
@@ -754,7 +759,7 @@ const handleDiscountChange = (e) => {
       
   
       setIsPaymentConfirmed(true);
-      alert('Bill Created Successfully');
+      alert(`Bill Created Successfully. Your Receipt Number is: ${receiptNumber}`);
       navigate('/usersidebar/clients');
     } catch (error) {
       console.error('Error confirming payment:', error);
